@@ -88,7 +88,7 @@ class PCodeInterpreter:
         self.PS = "FINI" # Change le statut pour arrêter la boucle while
 
     def PRN(self, _):
-        print(f"> Sortie : {self.MEM[self.SP]}") # Affiche le résultat en haut de pile
+        print(f"> Sortie du programme: {self.MEM[self.SP]}") # Affiche le résultat en haut de pile
         self.SP -= 1                            # Dépile après affichage
 
     def INN(self, _):
