@@ -54,7 +54,7 @@ if st.button("🚀 Compiler et Exécuter", type="primary"):
         "Analyse Lexicale", 
         "Table des Symboles", 
         "Génération P-Code", 
-        "Sortie du Compilateur"
+        "Sortie du Compilateur et erreurs"
     ])
 
     # On redirige la sortie console (print) pour l'afficher dans Streamlit
