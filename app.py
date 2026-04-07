@@ -12,7 +12,7 @@ from Interpreteur import PCodeInterpreter
 
 st.set_page_config(page_title="Compilateur L3", page_icon="⚙️", layout="wide")
 
-st.title("⚙️ Compilateur & Interpréteur - Langage L3")
+st.title(" TP Réalisation d’un Compilateur fait par Zéïnab , Maha & Elvis")
 st.markdown("Développé pour l'analyse lexicale, syntaxique, sémantique et la génération de P-Code.")
 
 # --- ZONE DE CODE SOURCE ---
@@ -33,7 +33,7 @@ st.sidebar.subheader("Entrées utilisateur")
 user_inputs_str = st.sidebar.text_area("Valeurs d'entrée", value="150")
 
 # --- BOUTON D'EXÉCUTION ---
-if st.button("🚀 Compiler et Exécuter", type="primary"):
+if st.button("Compiler et Exécuter", type="primary"):
     
     # On prépare les entrées simulées pour remplacer le input()
     input_values = user_inputs_str.strip().split('\n') if user_inputs_str else []
