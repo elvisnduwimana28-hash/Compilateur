@@ -54,8 +54,7 @@ if st.button("🚀 Compiler et Exécuter", type="primary"):
         "Analyse Lexicale", 
         "Table des Symboles", 
         "Génération P-Code", 
-        "Console d'Exécution",
-        "Erreurs"
+        "Sortie du Compilateur"
     ])
 
     # On redirige la sortie console (print) pour l'afficher dans Streamlit
@@ -110,12 +109,7 @@ if st.button("🚀 Compiler et Exécuter", type="primary"):
         st.subheader("Résultat de l'exécution")
         # On filtre pour ne garder que les sorties pertinentes (les write/PRN)
         sorties = [line for line in console_output.split('\n') if "> Sortie :" in line]
-        if sorties:
-            for s in sorties:
-                st.success(s)
-        else:
-            st.info("Aucune sortie générée ou le programme ne contient pas de 'write()'.")
             
     with tab5:
-        st.subheader("Logs système & Erreurs")
+        st.subheader("Compilation et Exécution - Détails")
         st.text(console_output)
