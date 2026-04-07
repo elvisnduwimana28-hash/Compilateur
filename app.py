@@ -109,7 +109,10 @@ if st.button("🚀 Compiler et Exécuter", type="primary"):
         st.subheader("Résultat de l'exécution")
         # On filtre pour ne garder que les sorties pertinentes (les write/PRN)
         sorties = [line for line in console_output.split('\n') if "> Sortie :" in line]
+        if sorties:
+            for s in sorties:
+                st.success(s)
             
     with tab5:
-        st.subheader("Compilation et Exécution - Détails")
+        st.subheader("Logs système & Erreurs")
         st.text(console_output)
