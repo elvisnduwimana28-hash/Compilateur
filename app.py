@@ -50,7 +50,7 @@ if st.button("🚀 Compiler et Exécuter", type="primary"):
     builtins.input = mock_input
 
     # Création des onglets pour l'affichage
-    tab1, tab2, tab3, tab4, tab5 = st.tabs([
+    tab1, tab2, tab3, tab4 = st.tabs([
         "Analyse Lexicale", 
         "Table des Symboles", 
         "Génération P-Code", 
@@ -105,14 +105,8 @@ if st.button("🚀 Compiler et Exécuter", type="primary"):
     # Récupération de tout ce qui a été imprimé dans la console
     console_output = f.getvalue()
 
-    with tab4:
-        st.subheader("Résultat de l'exécution")
-        # On filtre pour ne garder que les sorties pertinentes (les write/PRN)
-        sorties = [line for line in console_output.split('\n') if "> Sortie :" in line]
-        if sorties:
-            for s in sorties:
-                st.success(s)
+    
             
-    with tab5:
-        st.subheader("Logs système & Erreurs")
+    with tab4:
+        st.subheader("Compilateur & Interpréteur - Sortie Console")
         st.text(console_output)
