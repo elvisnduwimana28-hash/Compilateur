@@ -15,7 +15,7 @@ st.set_page_config(page_title="Compilateur L3", page_icon="⚙️", layout="wide
 st.title(" TP Réalisation d’un Compilateur fait par Zéïnab , Maha & Elvis")
 st.markdown("Développé pour l'analyse lexicale, syntaxique, sémantique et la génération de P-Code.")
 
-st.sidebar.header("Options")
+st.sidebar.header("Entrées de l'utilisateur")
 default_code = """program Test;
 const TVA = 20;
 var prix, total;
@@ -27,7 +27,7 @@ end."""
 
 code_source = st.text_area("Code Source (Langage L3)", value=default_code, height=250)
 
-user_inputs_str = st.sidebar.text_area("Valeurs d'entrée", value="150")
+user_inputs_str = st.sidebar.text_area("Valeurs d'entrée :", value="150")
 
 
 if st.button("Compiler et Exécuter", type="primary"):
