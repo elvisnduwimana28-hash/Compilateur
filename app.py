@@ -29,8 +29,7 @@ end."""
 code_source = st.text_area("Code Source (Langage L3)", value=default_code, height=250)
 
 # Comme ton code utilise input(), on demande à l'utilisateur de prévoir les entrées
-st.sidebar.subheader("Entrées utilisateur (read)")
-st.sidebar.info("Si ton programme contient des `read()`, tape les valeurs ici (une par ligne).")
+st.sidebar.subheader("Entrées utilisateur")
 user_inputs_str = st.sidebar.text_area("Valeurs d'entrée", value="150")
 
 # --- BOUTON D'EXÉCUTION ---
