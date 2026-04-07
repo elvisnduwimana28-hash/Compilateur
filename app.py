@@ -15,7 +15,6 @@ st.set_page_config(page_title="Compilateur L3", page_icon="⚙️", layout="wide
 st.title(" TP Réalisation d’un Compilateur fait par Zéïnab , Maha & Elvis")
 st.markdown("Développé pour l'analyse lexicale, syntaxique, sémantique et la génération de P-Code.")
 
-# --- ZONE DE CODE SOURCE ---
 st.sidebar.header("Options")
 default_code = """program Test;
 const TVA = 20;
@@ -28,11 +27,9 @@ end."""
 
 code_source = st.text_area("Code Source (Langage L3)", value=default_code, height=250)
 
-# Comme ton code utilise input(), on demande à l'utilisateur de prévoir les entrées
-st.sidebar.subheader("Entrées utilisateur")
 user_inputs_str = st.sidebar.text_area("Valeurs d'entrée", value="150")
 
-# --- BOUTON D'EXÉCUTION ---
+
 if st.button("Compiler et Exécuter", type="primary"):
     
     # On prépare les entrées simulées pour remplacer le input()
@@ -48,7 +45,7 @@ if st.button("Compiler et Exécuter", type="primary"):
             
     builtins.input = mock_input
 
-    # Création des onglets pour l'affichage
+    
     tab1, tab2, tab3, tab4 = st.tabs([
         "Analyse Lexicale", 
         "Table des Symboles", 
@@ -96,12 +93,11 @@ if st.button("Compiler et Exécuter", type="primary"):
             interp.run()
 
         except SystemExit:
-            # Ton code utilise sys.exit(1) en cas d'erreur, on doit l'attraper pour ne pas crasher l'app Streamlit
             st.error("L'exécution s'est arrêtée suite à une erreur (voir onglet Erreurs).")
         except Exception as e:
             st.error(f"Une erreur inattendue est survenue : {e}")
 
-    # Récupération de tout ce qui a été imprimé dans la console
+    
     console_output = f.getvalue()
 
     

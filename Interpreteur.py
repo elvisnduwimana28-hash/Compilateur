@@ -4,7 +4,7 @@ class PCodeInterpreter:
         self.MEM = [0] * 1000 # Tableau simulant la mémoire vive (RAM) et la Pile (Stack)
         self.PC = 0           # Program Counter : Index de l'instruction actuelle
         self.SP = -1          # Stack Pointer : Index du dernier élément ajouté à la pile
-        self.PS = "EXECUTION" # État de la machine (s'arrête si différent de "EXECUTION")
+        self.PS = "EXECUTION" # État de la machine ("EXECUTION" ou "FINI")
 
     # --- Méthodes d'instructions (Le Jeu d'Instructions) ---
 
@@ -117,27 +117,6 @@ class PCodeInterpreter:
         print("Fin de l'exécution.")
 
 # --- Test du programme ---
-# Ce code charge 5, puis 8, vérifie si 5 > 8 (Faux = 0), affiche 0, puis s'arrête.
-programme2 = [
-    ("LDI", 5),
-    ("LDI", 8),
-    ("MUL", None),
-    ("PRN", None),
-    ("HLT", None)
-]
-programme = [
-    ("LDI", 5),
-    ("LDI", 8),
-    ("ADD", None),
-    ("PRN", None),
-    ("HLT", None)
-]
-
-
-"""interp = PCodeInterpreter(programme)
-interp.run()
-interp = PCodeInterpreter(programme2)
-interp.run()"""
 
 programme_addition = [
     ("LDA", 1),    # On prépare l'adresse mémoire 0
@@ -157,5 +136,5 @@ programme_addition = [
     ("HLT", None)  # Fin
 ]
 
-"""interp = PCodeInterpreter(programme_addition)
-interp.run()"""
+interp = PCodeInterpreter(programme_addition)
+interp.run()

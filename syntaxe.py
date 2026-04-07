@@ -112,7 +112,6 @@ class ParserL3:
         self.TEST_TOKEN('END_TOKEN', "'end' attendu.")
 
 if __name__ == "__main__":
-    # TEST 1 : Code Correct
     source_correct = """
     program TestLexer;
     const TVA = 20;

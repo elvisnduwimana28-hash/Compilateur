@@ -24,8 +24,8 @@ class CompilateurL3:
             print(f"Erreur : '{nom}' est déjà déclaré.")
             sys.exit(1)
         
-        # Pour les variables, on utilise l'OFFSET actuel comme adresse [cite: 86]
-        # Pour les constantes, on stocke directement la valeur [cite: 99]
+        # Pour les variables, on utilise l'OFFSET actuel comme adresse 
+        # Pour les constantes, on stocke directement la valeur 
         adresse = self.OFFSET if classe == "VARIABLE" else (valeur if valeur is not None else 0)
         
         self.TABLESYM.append({'NOM': nom, 'CLASSE': classe, 'ADRESSE': adresse})
@@ -149,7 +149,7 @@ class CompilateurL3:
             else: break
         self.TEST_TOKEN('PAR_FER_TOKEN')
 
-    # --- BRANCHEMENTS (IF / WHILE) [cite: 196, 197] ---
+    # --- BRANCHEMENTS (IF / WHILE)  ---
     def SI(self):
         self.lexer.NEXT_TOKEN()
         self.COND()
