@@ -88,11 +88,11 @@ class PCodeInterpreter:
         self.PS = "FINI" # Change le statut pour arrêter la boucle while
 
     def PRN(self, _):
-        print(f"> Le Prix total avec le TVA est égale à : {self.MEM[self.SP]}") # Affiche le résultat en haut de pile
+        print(f"> Sortie : {self.MEM[self.SP]}") # Affiche le résultat en haut de pile
         self.SP -= 1                            # Dépile après affichage
 
     def INN(self, _):
-        val = int(input("< Entrez un le Prix : ")) # Demande une saisie utilisateur
+        val = int(input("< Entrez un entier : ")) # Demande une saisie utilisateur
         addr = self.MEM[self.SP]                 # Lit l'adresse au sommet
         self.MEM[addr] = val                     # Stocke la saisie à cette adresse
         self.SP -= 1                             # Dépile l'adresse
