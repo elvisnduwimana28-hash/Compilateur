@@ -118,7 +118,7 @@ class PCodeInterpreter:
 
 # --- Test du programme ---
 
-programme_addition = [
+"""programme_addition = [
     ("LDA", 1),    # On prépare l'adresse mémoire 0
     ("INN", None), # L'utilisateur tape le 1er nombre (ex: 9) -> MEM[0] = 9
     
@@ -137,4 +137,4 @@ programme_addition = [
 ]
 
 interp = PCodeInterpreter(programme_addition)
-interp.run()
+interp.run()"""
